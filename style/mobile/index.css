@@ -1,0 +1,30 @@
+/* Import des dirfférent css */
+@import "../global-mobile.css";
+
+body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+a {
+    margin-top: 50px;
+    color: red !important;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 50px;
+    padding: 10px 20px;
+    transition: .5s ease-in-out;
+}
+a:hover {
+    box-shadow: 0 0 50px red;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+}
