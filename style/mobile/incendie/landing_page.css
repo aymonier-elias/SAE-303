@@ -1,3 +1,7 @@
 .carte {
-    width: 75%;
+  width: 75%;
+}
+
+.carte path:hover {
+  fill: rgb(255, 60, 60);
 }
