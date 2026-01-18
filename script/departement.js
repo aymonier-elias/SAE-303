@@ -12,6 +12,7 @@ if (params.has('dep')) {
     // Utilisations du JSON
     let data;
     loadData().then(myData => {
+
         data = myData;
         
         data.forEach(e => {
