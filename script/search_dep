@@ -1,6 +1,6 @@
 const form = document.getElementById("search")
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', function (event) {
     event.preventDefault(); // Empêche l'envoi classique
 
     const valeur = document.getElementById('search_dep').value;
@@ -10,7 +10,7 @@ form.addEventListener('submit', function(event) {
 
     if (!isNaN(nombre)) {
         // Redirection vers la page correspondant au nombre
-        window.location.href = `departement.html?dep=${nombre}`; 
+        window.location.href = `departement.html?dep=${nombre}`;
         // ou si tes routes sont comme /number/42 -> window.location.href = `/number/${nombre}`
     } else {
         alert('Veuillez entrer un nombre valide.');
