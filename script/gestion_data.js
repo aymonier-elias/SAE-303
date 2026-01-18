@@ -5,8 +5,31 @@ async function loadData() {
 
         data = await response.json();
 
-        // Restructuration des donné pour plus de facilité ensuite
+        const exceptions = ["Zone", "Numéro", "Région", "Département", "Catégorie A"];
+
+        function removeSpace(string) {
+            return string
+                .split(' ')
+                .join('')
+        }
+
         data.forEach(e => {
+            for (let cle in e) {
+                if (!exceptions.includes(cle)) {
+                    removeSpace(e[cle]);
+                    e[cle] = parseInt(e[cle]);
+                }
+            }
+        });
+
+
+        console.log(data)
+        // Restructuration des donné pour plus de facilité ensuite
+        // Je transforme tout en nombre
+        data.forEach(e => {
+
+
+
             // Ajout objet information
             let information = {};
             information.Numéro = e.Numéro;
@@ -168,7 +191,7 @@ async function loadData() {
             divers.Autre = e["Autres opérations diverses"];
             divers.Total = e["Divers"];
             opérationsDiverse.Divers = divers;
-            
+
             opérationsDiverse.Total = e["Opérations diverses"];
 
             delete e["Fuites d'eau"];
@@ -201,7 +224,6 @@ async function loadData() {
             delete e["Catégorie A"];
 
         });
-
         return data;
 
     } catch (error) {
