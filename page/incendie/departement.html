@@ -15,17 +15,20 @@
     <h1>Incendie En France</h1>
 
     <div class="search">
-        <form action="">
-            <input id="search_departement" type="search" placeholder="Entré le numéro du département">
-            <button type="submit">Loupe</button>
+        <form id="search" action="">
+            <input type="number" name="search_dep" id="search_dep">
+            <button id="submit" type="submit">Loupe</button>
         </form>
     </div>
 
 
     <div class="departement"></div>
 
+    <a href="../incendie/landing_page.html">Retour a la carte</a>
+
     <script src="/script/gestion_data.js"></script>
     <script src="/script/departement.js"></script>
+    <script src="/script/search_dep"></script>
 </body>
 
 </html>

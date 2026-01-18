@@ -6,19 +6,20 @@ const params = new URLSearchParams(window.location.search);
 const dep = params.get("dep");
 
 // Affichage du département en fonction de l'url
-if (params.has('dep')) {
+if (params.has('dep') && dep > 0 && dep < 99) {
     divSvg.innerHTML = `<img src="/img/svg/departements/${dep}.svg" alt="Département n°${dep}"></img>`;
-    
+
     // Utilisations du JSON
     let data;
     loadData().then(myData => {
 
         data = myData;
-        
+
         data.forEach(e => {
-            if (e.Numéro == dep) {
+            if (e.Information.Numéro == dep) {
                 console.log(e.Numéro + " -> " + e.Département);
-                divSvg.innerHTML += `<h2>${e.Département}</h2>`;
+                divSvg.innerHTML += `<h2>${e.Information.Nom} ${e.Information.Numéro}</h2>`;
+                divSvg.innerHTML += `<h3>${e.Incendie.Total} Incendie en 2023</h3>`;
             }
         });
     });
