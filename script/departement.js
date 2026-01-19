@@ -7,13 +7,14 @@ let dep = params.get("dep");
 const spe = params.get("spe");
 
 // Affichage du département en fonction de l'url
-if (params.has('dep') && dep > 0 && dep < 99) {
+if (params.has('dep') && dep > 0 && dep < 99 || dep == "2b" || dep == "2a") {
     if (dep == 94 || dep == 93 || dep == 92 || dep == 75) {
         divSvg.innerHTML = `<img src="/img/svg/departements/Paris.svg" alt="Département n°${dep}"></img>`;
         dep = "BSPP";
     } else {
         divSvg.innerHTML = `<img src="/img/svg/departements/${dep}.svg" alt="Département n°${dep}"></img>`;
     }
+
     // Utilisations du JSON
     let data;
     loadData().then(myData => {
