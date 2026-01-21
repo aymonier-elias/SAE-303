@@ -1,30 +1,108 @@
-/* Import des dirfférent css */
+/* Import des différents css */
 @import "../global-mobile.css";
 
 body {
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
+    padding: 20px;
 }
 
-a {
-    margin-top: 50px;
-    color: red !important;
-    font-weight: bold;
-    border: 2px solid red;
-    border-radius: 50px;
-    padding: 10px 20px;
-    transition: .5s ease-in-out;
+header {
+    margin-bottom: 50px;
 }
-a:hover {
-    box-shadow: 0 0 50px red;
+
+h1 {
+    margin-bottom: 12px;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #fff 0%, #ff3c3c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 8px;
 }
 
 .nav {
     display: flex;
     flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 1.05rem;
+    border: 2px solid rgba(255, 60, 60, 0.6);
+    border-radius: 50px;
+    padding: 16px 24px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.03);
+    display: block;
+    position: relative;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 25px;
+    background: #ff3c3c;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    transform: scaleY(0);
+    transition: transform 0.3s ease, width 0.3s ease 0.3s;
+    z-index: -1;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 25px;
+    background: #ff3c3c;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    transform: scaleY(0);
+    transition: transform 0.3s ease, width 0.3s ease 0.3s;
+    z-index: -1;
+}
+
+.nav-link:hover {
+    border-color: #ff3c3c;
+    background: rgba(255, 60, 60, 0.08);
+    box-shadow: 0 2px 8px rgba(255, 60, 60, 0.2);
+}
+
+.nav-link:hover::before {
+    transform: scaleY(1);
+    width: 50%;
+}
+
+.nav-link:hover::after {
+    transform: scaleY(1);
+    width: 50%;
+}
+
+.nav-link:active {
+    background: rgba(255, 60, 60, 0.12);
+    transform: scale(0.98);
 }

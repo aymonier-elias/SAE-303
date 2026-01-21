@@ -1,7 +1,6 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 * {
     padding: 0;
     margin: 0;
@@ -10,25 +9,70 @@
 
 body {
     background-color: #07122B;
-    font-family: 'roboto';
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 60, 60, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 60, 60, 0.05) 0%, transparent 50%);
+    font-family: 'Roboto', sans-serif;
     padding: 10px 20px;
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
 h1 {
     color: #fff;
     font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    color: #fff;
+    font-weight: 600;
+}
+
+h3 {
+    color: #fff;
+    font-weight: 500;
 }
 
 a {
     color: #fff;
     text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.carte {
-  width: 75%;
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+    width: 10px;
 }
 
-.carte path:hover {
-  fill: rgb(255, 60, 60);
-  cursor: pointer;
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 60, 60, 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 60, 60, 0.7);
+}
+
+/* Animations globales */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Focus visible pour l'accessibilité */
+*:focus-visible {
+    outline: 2px solid #ff3c3c;
+    outline-offset: 2px;
+    border-radius: 4px;
 }
