@@ -23,7 +23,7 @@ header {
 }
 
 .back-link:hover {
-    color: #ff3c3c !important;
+    color: var(--risque) !important;
     box-shadow: none !important;
 }
 
@@ -54,15 +54,15 @@ h1 {
     display: flex;
     gap: 10px;
     background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(255, 60, 60, 0.3);
+    border: 2px solid color-mix(in srgb, var(--risque) 30%, transparent);
     border-radius: 50px;
     padding: 5px;
     transition: all 0.3s ease;
 }
 
 .search-wrapper:focus-within {
-    border-color: #ff3c3c;
-    box-shadow: 0 0 20px rgba(255, 60, 60, 0.3);
+    border-color: var(--risque);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--risque) 30%, transparent);
     background: rgba(255, 255, 255, 0.08);
 }
 
@@ -92,7 +92,7 @@ h1 {
 }
 
 #submit {
-    background: #ff3c3c;
+    background: var(--risque);
     border: none;
     border-radius: 50%;
     width: 45px;
@@ -107,9 +107,9 @@ h1 {
 }
 
 #submit:hover {
-    background: #ff5c5c;
+    background: color-mix(in srgb, var(--risque) 90%, white);
     transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(255, 60, 60, 0.4);
+    box-shadow: 0 5px 15px color-mix(in srgb, var(--risque) 40%, transparent);
 }
 
 #submit:active {
@@ -148,8 +148,8 @@ h1 {
 }
 
 .carte path:hover {
-    fill: #ff3c3c !important;
-    filter: drop-shadow(0 0 10px rgba(255, 60, 60, 0.8));
+    fill: var(--risque) !important;
+    filter: drop-shadow(0 0 10px color-mix(in srgb, var(--risque) 80%, transparent));
     transform: translateZ(0);
 }
 

@@ -1,6 +1,9 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* Varibales */
+@import url('variables.css');
+
 * {
     padding: 0;
     margin: 0;
