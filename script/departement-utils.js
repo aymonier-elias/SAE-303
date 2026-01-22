@@ -148,7 +148,44 @@ function setupExpandableCategories(treeContainer) {
             
             if (!children) return;
             
+            // Vérifier si c'est une catégorie principale (category-item) ou une sous-catégorie (child-item)
+            const isMainCategory = this.classList.contains('category-item');
+            const isChildCategory = this.classList.contains('child-item');
+            
             if (children.style.display === 'none' || children.style.display === '') {
+                // Fermer toutes les autres catégories du même niveau
+                if (isMainCategory) {
+                    // Fermer toutes les autres catégories principales
+                    treeContainer.querySelectorAll('.category-item[data-expandable="true"]').forEach(otherCategory => {
+                        if (otherCategory !== this) {
+                            const otherChildren = otherCategory.querySelector('.category-children');
+                            const otherIcon = otherCategory.querySelector('.expand-icon');
+                            if (otherChildren) {
+                                otherChildren.style.display = 'none';
+                                if (otherIcon) otherIcon.textContent = '▼';
+                                otherCategory.classList.remove('expanded');
+                            }
+                        }
+                    });
+                } else if (isChildCategory) {
+                    // Fermer toutes les autres sous-catégories du même parent
+                    const parentCategory = this.closest('.category-item');
+                    if (parentCategory) {
+                        parentCategory.querySelectorAll('.child-item[data-expandable="true"]').forEach(otherChild => {
+                            if (otherChild !== this) {
+                                const otherChildren = otherChild.querySelector('.child-children');
+                                const otherIcon = otherChild.querySelector('.expand-icon');
+                                if (otherChildren) {
+                                    otherChildren.style.display = 'none';
+                                    if (otherIcon) otherIcon.textContent = '▼';
+                                    otherChild.classList.remove('expanded');
+                                }
+                            }
+                        });
+                    }
+                }
+                
+                // Ouvrir la catégorie cliquée
                 children.style.display = 'flex';
                 if (icon) icon.textContent = '▲';
                 this.classList.add('expanded');

@@ -80,10 +80,6 @@ h1 {
     margin: 0;
 }
 
-#search_dep[type=number] {
-    -moz-appearance: textfield;
-}
-
 #submit {
     background: var(--incendit);
     border: none;
@@ -258,6 +254,9 @@ h1 {
     min-width: 120px;
     max-width: 180px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .category-content {
@@ -304,7 +303,7 @@ h1 {
     transform: rotate(180deg);
 }
 
-/* Sous-catégories ERP */
+/* Sous-catégories */
 .category-children {
     display: none;
     flex-direction: row;
@@ -313,6 +312,7 @@ h1 {
     margin-top: 15px;
     padding-top: 15px;
     position: relative;
+    width: 330px;
 }
 
 .category-children::before {
