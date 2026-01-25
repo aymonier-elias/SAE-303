@@ -80,10 +80,6 @@ h1 {
     margin: 0;
 }
 
-#search_dep[type=number] {
-    -moz-appearance: textfield;
-}
-
 #submit {
     background: var(--accident);
     border: none;
@@ -141,7 +137,7 @@ h1 {
 }
 
 .departement img {
-    max-width: 100%;
+    width: 25%;
     height: auto;
     border-radius: 15px;
 
@@ -460,4 +456,11 @@ h1 {
     .departement h3 {
         font-size: 1.2rem;
     }
+}
+
+/* Svg Graph */
+.background {
+    position: absolute;
+    z-index: -10;
+    opacity: .10;
 }

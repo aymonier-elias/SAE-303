@@ -137,7 +137,7 @@ h1 {
 }
 
 .departement img {
-  max-width: 100%;
+  width: 20%;
   height: auto;
   border-radius: 15px;
 
@@ -493,6 +493,5 @@ h1 {
   font-weight: 700;
   font-family: "Roboto", sans-serif;
   text-shadow: 0 0 10px color-mix(in srgb, var(--secours) 60%, transparent);
-  opacity: 0.8;
   z-index: -5;
 }
