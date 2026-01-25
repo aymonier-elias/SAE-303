@@ -74,5 +74,31 @@ initDepartmentPage({
         averages.ProtectionDesBiens,
         averages.Divers
     ],
-    chartColor: 'rgba(60, 60, 255, 0.7)'
+    chartColor: 'rgba(60, 60, 255, 0.7)',
+    onDataLoaded: (operation, averages, info) => {
+        // Calcul du ratio entre le total du département et la moyenne nationale
+        const totalDepartement = operation.Total || 0;
+        const moyenneNationale = averages.Total || 1; // Éviter division par zéro
+        
+        // Calcul du ratio proportionnel
+        const ratio = moyenneNationale > 0 ? totalDepartement / moyenneNationale : 1;
+        
+        // Durée de base de l'animation (1.5 secondes)
+        const dureeBase = 1.5;
+        
+        // Calcul de la nouvelle durée : plus le ratio est élevé, plus l'animation est rapide
+        // Si ratio = 1 (égal à la moyenne), durée = 1.5s
+        // Si ratio = 2 (2x la moyenne), durée = 1.5/2 = 0.75s (plus rapide)
+        // Si ratio = 0.5 (0.5x la moyenne), durée = 1.5/0.5 = 3s (plus lent)
+        const nouvelleDuree = dureeBase / ratio;
+        
+        // Limiter la durée entre 0.5s et 3s pour éviter les extrêmes
+        const dureeLimitee = Math.max(0.5, Math.min(3, nouvelleDuree));
+        
+        // Application de la nouvelle durée à l'animation de la goutte
+        const goute = document.querySelector('.background .goute');
+        if (goute) {
+            goute.style.animationDuration = `${dureeLimitee}s`;
+        }
+    }
 });
