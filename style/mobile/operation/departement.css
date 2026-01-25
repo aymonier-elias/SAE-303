@@ -450,7 +450,7 @@ h1 {
     z-index: -10;
     opacity: 1;
     .toyo {
-        width: 200%;
+        width: 2500px;
         opacity: 0.2;
     }
 }
@@ -458,7 +458,7 @@ h1 {
     position: relative;
     width: 45px;
     top: -100px;
-    left: 775px;
+    left: 950px;
     opacity: .5;
     animation: chuteGoute infinite 1.5s;
 }
