@@ -128,5 +128,43 @@ initDepartmentPage({
         averages.SecoursAVictimes.Total,
         averages.AideAPersonnes.Total
     ],
-    chartColor: 'rgba(22, 175, 22, 0.7)'
+    chartColor: 'rgba(22, 175, 22, 0.7)',
+    onDataLoaded: (secours, averages, info) => {
+        // Calcul du ratio entre le total du département et la moyenne nationale
+        const totalDepartement = secours.Total || 0;
+        const moyenneNationale = averages.Total || 1; // Éviter division par zéro
+        
+        // Calcul du ratio proportionnel
+        const ratio = moyenneNationale > 0 ? totalDepartement / moyenneNationale : 1;
+        
+        // Durée de base de l'animation (2 secondes)
+        const dureeBase = 2;
+        
+        // Calcul de la nouvelle durée : plus le ratio est élevé, plus l'animation est rapide
+        // Si ratio = 2 (2x la moyenne), durée = 2/2 = 1s (plus rapide)
+        // Si ratio = 0.5 (0.5x la moyenne), durée = 2/0.5 = 4s (plus lent)
+        const nouvelleDuree = dureeBase / ratio;
+        
+        // Calcul des BPM : 60 secondes / durée de l'animation
+        const bpm = Math.round(60 / nouvelleDuree);
+        
+        // Application de la nouvelle durée à l'animation ECG
+        const backgroundSvg = document.querySelector('.background svg path');
+        if (backgroundSvg) {
+            backgroundSvg.style.animationDuration = `${nouvelleDuree}s`;
+        }
+        
+        // Ajout du texte BPM
+        const backgroundContainer = document.querySelector('.background');
+        if (backgroundContainer) {
+            // Vérifier si le texte BPM existe déjà
+            let bpmText = backgroundContainer.querySelector('.bpm-text');
+            if (!bpmText) {
+                bpmText = document.createElement('div');
+                bpmText.className = 'bpm-text';
+                backgroundContainer.appendChild(bpmText);
+            }
+            bpmText.textContent = `${bpm} BPM`;
+        }
+    }
 });

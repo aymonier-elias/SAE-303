@@ -125,7 +125,7 @@ initDepartmentPage({
         const ratio = moyenneNationale > 0 ? totalDepartement / moyenneNationale : 1;
         
         // Application du scaleY à la flamme
-        const backgroundSvg = document.querySelector('.background svg');
+        const backgroundSvg = document.querySelector('.background img');
         if (backgroundSvg) {
             backgroundSvg.style.transform = `scaleY(${ratio})`;
             // Ajouter une transition pour une animation fluide

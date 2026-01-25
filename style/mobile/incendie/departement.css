@@ -464,7 +464,7 @@ h1 {
     z-index: -10;
     opacity: .10;
 }
-.background svg {
+.background img {
     position: relative;
     top: 200px;
     height: 500px;
