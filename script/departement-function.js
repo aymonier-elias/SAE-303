@@ -411,5 +411,11 @@ function initDepartmentPage(config) {
         });
       }, 500);
     }
+
+    // Callback optionnel après le chargement des données
+    if (config.onDataLoaded) {
+      const averages = config.calculateAverage(data);
+      config.onDataLoaded(categoryData, averages, info);
+    }
   });
 }

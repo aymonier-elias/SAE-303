@@ -112,5 +112,24 @@ initDepartmentPage({
         averages.Végétal,
         averages.Autre
     ],
-    chartColor: 'rgba(255, 60, 60, 0.7)'
+    chartColor: 'rgba(255, 60, 60, 0.7)',
+    onDataLoaded: (incendie, averages, info) => {
+        // Calcul du ratio entre le total du département et la moyenne nationale
+        const totalDepartement = incendie.Total || 0;
+        const moyenneNationale = averages.Total || 1; // Éviter division par zéro
+        
+        // Calcul du ratio proportionnel
+        // Si le département est égal à la moyenne, scaleY = 1
+        // Si le département est 2x la moyenne, scaleY = 2
+        // Si le département est 0.5x la moyenne, scaleY = 0.5
+        const ratio = moyenneNationale > 0 ? totalDepartement / moyenneNationale : 1;
+        
+        // Application du scaleY à la flamme
+        const backgroundSvg = document.querySelector('.background svg');
+        if (backgroundSvg) {
+            backgroundSvg.style.transform = `scaleY(${ratio})`;
+            // Ajouter une transition pour une animation fluide
+            backgroundSvg.style.transition = 'transform 0.5s ease-out';
+        }
+    }
 });

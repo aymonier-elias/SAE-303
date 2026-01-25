@@ -456,3 +456,18 @@ h1 {
         font-size: 1.2rem;
     }
 }
+
+
+/* Svg Grpah */
+.background {
+    position: absolute;
+    z-index: -10;
+    opacity: .10;
+}
+.background svg {
+    position: relative;
+    top: 200px;
+    height: 500px;
+    transform-origin: bottom;
+    transform: scaleY(1);
+}
