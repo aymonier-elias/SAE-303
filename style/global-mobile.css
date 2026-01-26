@@ -16,7 +16,6 @@ body {
         radial-gradient(circle at 20% 50%, rgba(255, 60, 60, 0.05) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 60, 60, 0.05) 0%, transparent 50%);
     font-family: 'Roboto', sans-serif;
-    padding: 10px 20px;
     color: #fff;
     line-height: 1.6;
     min-height: 100vh;
@@ -44,6 +43,39 @@ a {
     color: #fff;
     text-decoration: none;
     transition: all 0.3s ease;
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    margin-top: 200px;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.footer-content {
+    width: 30%;
+}
+
+.footer-source,
+.footer-year {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--incendit);
+    text-decoration: none;
 }
 
 /* Scrollbar personnalisée */
