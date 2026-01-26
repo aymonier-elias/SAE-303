@@ -1,0 +1,34 @@
+/* Styles de carte partagés */
+.carte-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.carte {
+    width: 100%;
+    max-width: 542px;
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.carte:hover {
+    transform: scale(1.02);
+}
+
+.carte path {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.carte path:hover {
+    transform: translateZ(0);
+}
+
+.carte g {
+    transition: all 0.3s ease;
+}

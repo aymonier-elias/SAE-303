@@ -1,0 +1,92 @@
+@import "../global.css";
+@import "../shared/departement.css";
+@import "../shared/search.css";
+
+.back-link:hover {
+    color: var(--accident) !important;
+}
+
+.search-wrapper {
+    border-color: color-mix(in srgb, var(--accident) 30%, transparent);
+}
+
+.search-wrapper:focus-within {
+    border-color: var(--accident);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--accident) 30%, transparent);
+}
+
+#submit {
+    background: var(--accident);
+}
+
+#submit:hover {
+    box-shadow: 0 5px 15px color-mix(in srgb, var(--accident) 40%, transparent);
+}
+
+.total-value {
+    color: var(--accident);
+    text-shadow: 0 0 20px color-mix(in srgb, var(--accident) 60%, transparent);
+}
+
+.total-section::after {
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--accident) 50%, transparent), color-mix(in srgb, var(--accident) 20%, transparent));
+}
+
+.category-value {
+    color: var(--accident);
+    text-shadow: 0 0 10px color-mix(in srgb, var(--accident) 40%, transparent);
+}
+
+.expand-icon {
+    color: var(--accident);
+}
+
+.category-children::before {
+    background: color-mix(in srgb, var(--accident) 30%, transparent);
+}
+
+.child-value {
+    color: color-mix(in srgb, var(--accident) 90%, transparent);
+}
+
+.grandchild-value {
+    color: color-mix(in srgb, var(--accident) 80%, transparent);
+}
+
+.error-message {
+    background: color-mix(in srgb, var(--accident) 10%, transparent);
+    border-color: color-mix(in srgb, var(--accident) 30%, transparent);
+}
+
+/* Svg Graph */
+.background {
+    position: absolute;
+    z-index: -10;
+    opacity: .2;
+}
+
+.background img {
+    position: relative;
+    height: 200px;
+    top: 200px;
+    animation: voiture 2s infinite linear;
+    animation-delay: var(--delay);
+    opacity: 0;
+}
+
+@keyframes voiture {
+    0% {
+        opacity: 0;
+        transform: translatex(1400px) rotateY(180deg);
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: translatex(-1400px) rotateY(180deg);
+        opacity: 0;
+    }
+}

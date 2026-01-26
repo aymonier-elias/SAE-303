@@ -1,0 +1,30 @@
+@import "../global.css";
+@import "../shared/landing-page.css";
+@import "../shared/search.css";
+@import "../shared/carte.css";
+
+.back-link:hover {
+    color: var(--risque) !important;
+}
+
+.search-wrapper {
+    border-color: color-mix(in srgb, var(--risque) 30%, transparent);
+}
+
+.search-wrapper:focus-within {
+    border-color: var(--risque);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--risque) 30%, transparent);
+}
+
+#submit {
+    background: var(--risque);
+}
+
+#submit:hover {
+    box-shadow: 0 5px 15px color-mix(in srgb, var(--risque) 40%, transparent);
+}
+
+.carte path:hover {
+    fill: var(--risque) !important;
+    filter: drop-shadow(0 0 10px color-mix(in srgb, var(--risque) 80%, transparent));
+}

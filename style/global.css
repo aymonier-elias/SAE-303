@@ -1,7 +1,7 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Varibales */
+/* Variables */
 @import url('variables.css');
 
 * {
@@ -20,6 +20,7 @@ body {
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
+    padding: 20px;
 }
 
 h1 {

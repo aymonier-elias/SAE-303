@@ -1,0 +1,93 @@
+@import "../global.css";
+@import "../shared/departement.css";
+@import "../shared/search.css";
+
+.back-link:hover {
+    color: var(--operation) !important;
+}
+
+.search-wrapper {
+    border-color: color-mix(in srgb, var(--operation) 30%, transparent);
+}
+
+.search-wrapper:focus-within {
+    border-color: var(--operation);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--operation) 30%, transparent);
+}
+
+#submit {
+    background: var(--operation);
+}
+
+#submit:hover {
+    box-shadow: 0 5px 15px color-mix(in srgb, var(--operation) 40%, transparent);
+}
+
+.total-value {
+    color: var(--operation);
+    text-shadow: 0 0 20px color-mix(in srgb, var(--operation) 60%, transparent);
+}
+
+.total-section::after {
+    background: linear-gradient(to bottom, color-mix(in srgb, var(--operation) 50%, transparent), color-mix(in srgb, var(--operation) 20%, transparent));
+}
+
+.category-value {
+    color: var(--operation);
+    text-shadow: 0 0 10px color-mix(in srgb, var(--operation) 40%, transparent);
+}
+
+.expand-icon {
+    color: var(--operation);
+}
+
+.category-children::before {
+    background: color-mix(in srgb, var(--operation) 30%, transparent);
+}
+
+.child-value {
+    color: color-mix(in srgb, var(--operation) 90%, transparent);
+}
+
+.grandchild-value {
+    color: color-mix(in srgb, var(--operation) 80%, transparent);
+}
+
+.error-message {
+    background: color-mix(in srgb, var(--operation) 10%, transparent);
+    border-color: color-mix(in srgb, var(--operation) 30%, transparent);
+}
+
+/* Svg Graph */
+.background {
+    position: absolute;
+    z-index: -10;
+    opacity: 1;
+}
+
+.background .toyo {
+    width: 2500px;
+    opacity: 0.2;
+}
+
+.background .goute {
+    position: relative;
+    width: 45px;
+    top: -100px;
+    left: 950px;
+    opacity: .5;
+    animation: chuteGoute infinite 1.5s;
+}
+
+@keyframes chuteGoute {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        top: 1000px;
+        opacity: 0;
+    }
+}
